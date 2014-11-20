@@ -4,19 +4,16 @@ public class Peliculas {
 
     private NodoPelicula raiz;
 
-    public void Insertar(NodoPelicula elemento) {
+    public void Insertar(boolean disponible,String genero, String nombre,int ID, int costo,String tipo) {
         NodoPelicula nuevo;
         nuevo = new NodoPelicula();
-        nuevo.setCatalago(elemento.getCatalago());
-        nuevo.setCosto(elemento.getCosto());
-        nuevo.setFechaRecepcion(elemento.getFechaRecepcion());
-        nuevo.setFechaRenta(elemento.getFechaRenta());
-        nuevo.setGenero(elemento.getGenero());
-        nuevo.setGeneroPelicula(elemento.getGeneroPelicula());
-        nuevo.setID(elemento.getID());
-        nuevo.setNombre(elemento.getNombre());
-        nuevo.setTipo(elemento.getTipo());
-        nuevo.setSiguiente(elemento.getSiguiente());
+//        nuevo.setCatalago(elemento.getCatalago());
+        nuevo.setCosto(costo);
+        nuevo.setGenero(genero);
+        nuevo.setID(ID);
+        nuevo.setNombre(nombre);
+        nuevo.setTipo(tipo);
+        nuevo.setDisponible(disponible);
 
         if (getRaiz() == null) {
             nuevo.setSiguiente(null);
@@ -30,7 +27,7 @@ public class Peliculas {
         }
     }
 
-    public void modificarUsuario(String generoPelicula, String nombre, int ID, int costo, String tipo, String genero, String catalago, int fechaRenta, int fechaRecepcion) {
+    public void modificarJuego(String genero, String nombre, int ID, int costo, String tipo) {
         NodoPelicula nombre1 = getRaiz();
 
         while (!nombre1.getNombre().equals(nombre)) {
@@ -43,12 +40,8 @@ public class Peliculas {
         if (nombre1 == null) {
             System.out.println("No existe la película");
         } else {
-            nombre1.setCatalago(catalago);
             nombre1.setCosto(costo);
-            nombre1.setFechaRecepcion(fechaRecepcion);
-            nombre1.setFechaRenta(fechaRenta);
             nombre1.setGenero(genero);
-            nombre1.setGeneroPelicula(generoPelicula);
             nombre1.setID(ID);
             nombre1.setNombre(nombre);
             nombre1.setTipo(tipo);
@@ -76,7 +69,6 @@ public class Peliculas {
             } else {
                 while (!aux.getSiguiente().getNombre().equals(actualNombre)) {
                     aux = aux.getSiguiente();
-
                 }
                 aux.setSiguiente(aux.getSiguiente().getSiguiente());
             }
@@ -104,8 +96,9 @@ public class Peliculas {
         return raiz;
     }
 
-   
     public void setRaiz(NodoPelicula raiz) {
         this.raiz = raiz;
     }
+
+
 }

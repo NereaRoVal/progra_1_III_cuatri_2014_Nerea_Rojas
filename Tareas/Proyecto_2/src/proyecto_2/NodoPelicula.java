@@ -1,38 +1,44 @@
 package proyecto_2;
 
 public class NodoPelicula {
-
-    private String generoPelicula;
+    
+    private boolean disponible;
+    private String genero;
     private String nombre;
     private int ID;
     private int costo;
     private String tipo;
-    private String genero;
     private String catalago;
-    private int fechaRenta;
-    private int fechaRecepcion;
     private NodoPelicula siguiente;
 
     public NodoPelicula() {
-        generoPelicula = "";
+        genero = "";
         nombre = "";
         ID = 0;
         costo = 0;
         tipo = "";
-        genero = "";
         catalago = "";
-        fechaRenta = 0;
-        fechaRecepcion = 0;
         siguiente = null;
+        disponible = false;
     }
 
-    public String getGeneroPelicula() {
-        return generoPelicula;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setGeneroPelicula(String generoPelicula) {
-        this.generoPelicula = generoPelicula;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
+
+    
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -66,36 +72,12 @@ public class NodoPelicula {
         this.tipo = tipo;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public String getCatalago() {
         return catalago;
     }
 
     public void setCatalago(String catalago) {
         this.catalago = catalago;
-    }
-
-    public int getFechaRenta() {
-        return fechaRenta;
-    }
-
-    public void setFechaRenta(int fechaRenta) {
-        this.fechaRenta = fechaRenta;
-    }
-
-    public int getFechaRecepcion() {
-        return fechaRecepcion;
-    }
-
-    public void setFechaRecepcion(int fechaRecepcion) {
-        this.fechaRecepcion = fechaRecepcion;
     }
 
     public NodoPelicula getSiguiente() {

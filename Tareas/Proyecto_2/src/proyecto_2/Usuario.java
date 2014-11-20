@@ -81,7 +81,7 @@ public class Usuario {
         nodoUsuario Anterior = raiz;
         while (siguienteJugador != null) {
             if (siguienteJugador.getNombre().equals(nombre)) {
-                System.out.println("Nombre Buscado: " + siguienteJugador.getNombre() + "\n");
+                System.out.println("Nombre buscado: " + siguienteJugador.getNombre() + "\n");
                 Anterior = siguienteJugador;
             }
             siguienteJugador = siguienteJugador.getSiguiente();
